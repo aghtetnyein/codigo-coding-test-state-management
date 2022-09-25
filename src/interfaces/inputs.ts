@@ -1,4 +1,4 @@
-import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
+import { ISingleTeamProps } from "./team";
 
 export interface IInputTextProps {
   required: boolean;
@@ -7,18 +7,21 @@ export interface IInputTextProps {
   label: string;
   placeholder: string;
   register: any;
-  error:
-    | string
-    | FieldError
-    | Merge<FieldError, FieldErrorsImpl<any>>
-    | undefined;
+  error: string | undefined;
   disabled: boolean;
 }
 
 export interface IButtonProps {
-  variant: string;
+  variant: "primary" | "bordered" | "danger" | "icon";
   type: "button" | "submit" | "reset" | undefined;
   disabled: boolean;
-  label: string;
+  label?: string | undefined;
+  icon?: React.ReactElement<any> | undefined;
   handleClick?: () => void;
+}
+
+export interface ISelectProps {
+  value: number | string;
+  options: ISingleTeamProps[];
+  handleSelectTeam: (teamId: number) => void;
 }

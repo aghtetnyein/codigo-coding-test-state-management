@@ -13,10 +13,17 @@ const InputText = ({
 }: IInputTextProps) => {
   return (
     <div>
-      <label htmlFor={name}>
-        {label}
-        {required && <span>*</span>}
-      </label>
+      <div className="flex">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700"
+        >
+          {label}
+        </label>
+        {required && (
+          <label className="block ml-1 text-sm font-medium text-red">*</label>
+        )}
+      </div>
       <input
         {...register}
         id={name}
@@ -24,8 +31,9 @@ const InputText = ({
         type={type}
         placeholder={placeholder}
         disabled={disabled}
+        className="appearance-none my-1 block w-full px-3 h-10 border border-gray-300 placeholder-gray-400 focus:outline-none sm:text-sm"
       />
-      <>{error}</>
+      <p className="block text-xs font-medium text-red">{error}</p>
     </div>
   );
 };

@@ -43,7 +43,6 @@ const Auth = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    console.log("auth changed");
     if (!auth.user.username) {
       setIsAuth(false);
     } else {

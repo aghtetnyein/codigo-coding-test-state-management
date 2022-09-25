@@ -29,7 +29,6 @@ export const authSlice = createSlice({
       });
     },
     logout: (state) => {
-      console.log("logout");
       state.user.username = null;
       // remove from cookies
       Cookies.remove("_un");

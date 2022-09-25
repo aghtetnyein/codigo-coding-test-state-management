@@ -32,8 +32,6 @@ const Login = () => {
   });
 
   const onSubmit = (data: any) => {
-    console.log(data);
-
     // dispatch auth success
     dispatch(
       login({
@@ -47,26 +45,27 @@ const Login = () => {
   };
 
   return (
-    <div>
-      This is Login Page
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <InputText
-          register={register("username")}
-          required={true}
-          type={"text"}
-          disabled={false}
-          name={"username"}
-          label={"Username"}
-          placeholder={"Username"}
-          error={errors.username?.message}
-        />
-        <Button
-          variant={"primary"}
-          type={"submit"}
-          disabled={false}
-          label={"Log in"}
-        />
-      </form>
+    <div className="w-screen h-screen overflow-hidden flex items-center justify-center p-2">
+      <div className="w-80">
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+          <InputText
+            register={register("username")}
+            required={true}
+            type={"text"}
+            disabled={false}
+            name={"username"}
+            label={"Username"}
+            placeholder={"Username"}
+            error={errors.username?.message?.toString()}
+          />
+          <Button
+            variant={"primary"}
+            type={"submit"}
+            disabled={false}
+            label={"Log in"}
+          />
+        </form>
+      </div>
     </div>
   );
 };

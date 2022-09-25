@@ -1,0 +1,24 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "height_feet": 6,
+      "height_inches": 5,
+      "weight_pounds": 200,
+      "position": "PG",
+      "team": null
+    },
+    {
+      "id": 2,
+      "first_name": "Jane",
+      "last_name": "Might",
+      "height_feet": 5,
+      "height_inches": 10,
+      "weight_pounds": 150,
+      "position": "SG",
+      "team": null
+    }
+  ]
+}
