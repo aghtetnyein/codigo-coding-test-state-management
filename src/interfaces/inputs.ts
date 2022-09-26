@@ -14,6 +14,7 @@ export interface IInputTextProps {
 export interface IButtonProps {
   variant: "primary" | "bordered" | "danger" | "icon";
   type: "button" | "submit" | "reset" | undefined;
+  isLoading?: boolean;
   disabled: boolean;
   label?: string | undefined;
   icon?: React.ReactElement<any> | undefined;

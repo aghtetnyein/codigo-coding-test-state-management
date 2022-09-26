@@ -4,6 +4,7 @@ const Button = ({
   type,
   disabled,
   variant,
+  isLoading = false,
   label,
   icon,
   handleClick,
@@ -34,6 +35,9 @@ const Button = ({
             ${variant === "danger" && "bg-red hover:bg-redHover text-white"}
           `}
         >
+          {isLoading && (
+            <div className="animate-spin h-5 w-5 mr-2 bg-primary"></div>
+          )}
           {label}
         </button>
       )}
