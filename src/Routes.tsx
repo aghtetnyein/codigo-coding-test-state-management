@@ -8,6 +8,7 @@ import IReduxStates from "./interfaces/reduxStates";
 // pages
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 
 const AuthRoutes = () => {
   return useRoutes([
@@ -19,6 +20,11 @@ const AuthRoutes = () => {
       path: "/login",
       element: <Navigate to="/" replace />,
     },
+    {
+      path: "/404",
+      element: <PageNotFound />,
+    },
+    { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 };
 
@@ -32,6 +38,11 @@ const UnAuthRoutes = () => {
       path: "/login",
       element: <Login />,
     },
+    {
+      path: "/404",
+      element: <PageNotFound />,
+    },
+    { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 };
 
